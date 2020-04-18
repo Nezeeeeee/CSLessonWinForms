@@ -19,9 +19,11 @@ namespace MyNewAppLesson
 
         private void btn1_Click(object sender, EventArgs e)
         {
-            if(tb1.Text != null)
+            if(tb1.Text != "")
             {
-                lbl2.Text = "ПРИВЕТ " + tb1.Text;
+                lbl2.Text = "ПРИВЕТ " + tb1.Text + ", " + "Это вы?";
+                pictureBox1.Visible = true;
+                checkBox1.Visible = true;
                 tb1.Clear();
             }
             else
@@ -31,10 +33,16 @@ namespace MyNewAppLesson
             }
         }
 
-        private void btn2_Click(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            tb1.Text = "";
-            lbl2.Text = "";
+            if(checkBox1.Checked == true)
+            {
+                lbl2.Text = "Вы нам подходите!";
+            }
+            else
+            {
+                lbl2.Text = "Идите ЛЕСОМ!";
+            }
         }
     }
 }
