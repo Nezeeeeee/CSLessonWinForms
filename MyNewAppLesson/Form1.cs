@@ -42,6 +42,8 @@ namespace MyNewAppLesson
             else
             {
                 lbl2.Text = "Идите ЛЕСОМ!";
+                pictureBox1.Visible = false;
+                checkBox1.Visible = false;
             }
         }
     }
