@@ -11,20 +11,42 @@ namespace ThreadLesson
     {
         static void Main(string[] args)
         {
-            //Получаем текущий поток
-            Thread t = Thread.CurrentThread;
+            //Создаем новый поток
+            Thread myThread = new Thread(new ThreadStart(Count));
+            myThread.Start(); //Запускаем поток
 
-            //Получаем имя потока
-            Console.WriteLine($"Имя потока: {t.Name}");
-            t.Name = "Метод Main";
-            Console.WriteLine($"Имя потока: {t.Name}");
+            for(int i  = 1; i < 9; i++)
+            {
+                Console.WriteLine("Главный поток");
+                Console.WriteLine(i*i);
+                Thread.Sleep(300);
+            }
 
-            Console.WriteLine($"Запущен ли поток: {t.IsAlive}");
-            Console.WriteLine($"Приоритет потока: {t.Priority}");
-            Console.WriteLine($"Статус потока: {t.ThreadState}");
+            Thread myThread2 = new Thread(Count2);
+            myThread2.Start();
+        }
 
-            //Получаем домен приложения
-            Console.WriteLine($"Домен приложения: {Thread.GetDomain().FriendlyName}");
+        public static void Count()
+        {
+            for(int i =1; i <9; i++)
+            {
+                Console.WriteLine("Второй поток:");
+                Console.WriteLine(i * i);
+                Thread.Sleep(400);
+            }
+        }
+
+        public static void Count2()
+        {
+            for(int i =1; i<9; i++)
+            {
+                Console.WriteLine("Третий поток:");
+                int a = 2+3;
+                int sum = a*i;
+                Console.WriteLine(sum);
+                Thread.Sleep(400);
+                
+            }
         }
     }
 }
