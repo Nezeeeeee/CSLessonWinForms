@@ -11,6 +11,7 @@ namespace Thread_Synchronization
     class Program
     {
         static int x = 0;
+        static object locker = new object();
         static void Main(string[] args)
         {
             for(int i = 1; i < 5; i++)
@@ -23,12 +24,15 @@ namespace Thread_Synchronization
 
         public static void Count()
         {
-            x = 1;
-            for(int i = 1; i < 9; i++)
+            lock (locker)
             {
-                Console.WriteLine("{0}: {1}", Thread.CurrentThread.Name, x);
-                x++;
-                Thread.Sleep(100);
+                x = 1;
+                for(int i = 1; i < 9; i++)
+                {
+                    Console.WriteLine("{0}: {1}", Thread.CurrentThread.Name, x);
+                    x++;
+                    Thread.Sleep(100);
+                }
             }
         }
     }
