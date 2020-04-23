@@ -12,10 +12,12 @@ namespace ParameterizedThreadStart
         //Потоки с параметрами и ParameterizedThreadStart
         static void Main(string[] args)
         {
-            int number = 4;
-            //Создаем новый поток
+            Counter counter = new Counter();
+            counter.x = 4;
+            counter.y = 5;
+
             Thread myThread = new Thread(Count);
-            myThread.Start(number);
+            myThread.Start(counter);
 
             for(int i = 1; i < 9; i++)
             {
@@ -25,16 +27,21 @@ namespace ParameterizedThreadStart
             }
         }
 
-        public static void Count(object x)
+        public static void Count(object obj)
         {
             for (int i = 1; i < 9; i++)
             {
-                int n = (int)x;
+                Counter c = (Counter)obj;
 
                 Console.WriteLine("Второй поток:");
-                Console.WriteLine(i * n);
-                Thread.Sleep(400);
+                Console.WriteLine(i*c.x * c.y);
             }
         }
+    }
+
+    public class Counter
+    {
+        public int x;
+        public int y;
     }
 }
