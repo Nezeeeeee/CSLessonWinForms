@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monitor", "Monitor\Monitor.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassAutoResetEvent", "ClassAutoResetEvent\ClassAutoResetEvent.csproj", "{3C5A3192-4D20-4945-ACDA-2E506E82AB13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassMutex", "ClassMutex\ClassMutex.csproj", "{A934EF27-1124-484D-83EC-FB5307185509}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3C5A3192-4D20-4945-ACDA-2E506E82AB13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3C5A3192-4D20-4945-ACDA-2E506E82AB13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3C5A3192-4D20-4945-ACDA-2E506E82AB13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A934EF27-1124-484D-83EC-FB5307185509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A934EF27-1124-484D-83EC-FB5307185509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A934EF27-1124-484D-83EC-FB5307185509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A934EF27-1124-484D-83EC-FB5307185509}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
